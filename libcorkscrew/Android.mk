@@ -52,6 +52,11 @@ endif
 LOCAL_SHARED_LIBRARIES += libdl libcutils liblog libgccdemangle
 
 LOCAL_CFLAGS += -std=gnu99 -Werror
+
+ifneq ($(filter 4.8 4.8.% 4.9 4.9.%, $(TARGET_GCC_VERSION)),)
+LOCAL_CFLAGS += -Wno-error=unused-parameter
+endif
+
 LOCAL_MODULE := libcorkscrew
 LOCAL_MODULE_TAGS := optional
 
