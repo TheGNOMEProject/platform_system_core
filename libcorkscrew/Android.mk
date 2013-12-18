@@ -53,7 +53,7 @@ LOCAL_SHARED_LIBRARIES += libdl libcutils liblog libgccdemangle
 
 LOCAL_CFLAGS += -std=gnu99 -Werror
 
-ifneq ($(filter 4.8 4.8.% 4.9 4.9.%, $(TARGET_GCC_VERSION)),)
+ifneq ($(filter 4.8 4.8.% 4.9 4.9.%, $(TARGET_GCC_VERSION_AND)),)
 LOCAL_CFLAGS += -Wno-error=unused-parameter
 endif
 
